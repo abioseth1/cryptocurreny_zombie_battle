@@ -18,7 +18,7 @@ contract ZombieFactory {
     function _createZombie(string _name, uint _dna) private {
         uint id = zombies.push(Zombie(_name, _dna)) - 1;
         // and fire it here
-        NewZombie(id, _name, _dna);
+        emit NewZombie(id, _name, _dna);
     }
 
     function _generateRandomDna(string _str) private view returns (uint) {
